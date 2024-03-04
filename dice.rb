@@ -7,7 +7,7 @@ use(BetterErrors::Middleware)
 BetterErrors.application_root = __dir__
 BetterErrors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 
-get("/") do
+get("/hello") do
   "Hello World"
 end
 
@@ -19,7 +19,7 @@ get("/giraffe") do
   "Hopefully this shows up without having to restart the server."
 end
 
-get("/home") do
+get("/") do
   "<h1>Dice Roll</h1>
    <ul>
     <li><a href=\"/dice/2/6\">Roll two 6-sided dice</a></li>
