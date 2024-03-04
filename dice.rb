@@ -33,12 +33,10 @@ get("/dice/2/6") do
 # Add them up  
   sum = first_die + second_die
 
-  outcome = "You rolled a #{first_die} and #{second_die} for a total of #{sum}"
-
+  @outcome = "You rolled a #{first_die} and #{second_die} for a total of #{sum}"
 
 # Send back both numbers and the total in the body of the response
-  "<h1>2d6</h1>
-  <p>#{outcome}</p>"
+  erb(:two_six)
 end
 
 get("/dice/2/10") do
@@ -48,9 +46,8 @@ get("/dice/2/10") do
   # Add them up  
   sum = first_die + second_die
     
-  outcome = "You rolled a #{first_die} and #{second_die} for a total of #{sum}"
-  "<h1>2d10</h1>
-  <p>#{outcome}</p>"
+  @outcome = "You rolled a #{first_die} and #{second_die} for a total of #{sum}"
+  erb(:two_ten)
 end          
 
 get("/dice/1/20") do
@@ -59,9 +56,8 @@ get("/dice/1/20") do
 # Result  
   result = one_die
     
-  outcome = "You rolled a #{one_die}."
-  "<h1>1d20</h1>
-  <p>#{outcome}</p>"
+  @outcome = "You rolled a #{one_die}."
+  erb(:one_twenty)
 end          
 
 get("/dice/5/4") do
@@ -74,7 +70,6 @@ get("/dice/5/4") do
   # Add them up  
   sum = first_die + second_die + third_die + fourth_die + fifth_die
     
-  outcome = "You rolled a #{first_die}, #{second_die}, #{third_die}, #{fourth_die}, and a #{fifth_die} for a total of #{sum}"
-  "<h1>5d4</h1>
-  <p>#{outcome}</p>"
+  @outcome = "You rolled a #{first_die}, #{second_die}, #{third_die}, #{fourth_die}, and a #{fifth_die} for a total of #{sum}"
+  erb(:five_four)
 end          
