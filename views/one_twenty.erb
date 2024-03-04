@@ -8,6 +8,14 @@
 
 
   <h1>1d20</h1>
+  <!--The silent ERB tag allows us to use Ruby in view templates even when we don’t want to inject that Ruby’s value into the HTML source code. -->
+  <% if @die == 1 %>
+    <p style="color: red"><%= @outcome %></p>
+  <% elsif @die == 20 %>
+    <p style="color: green"><%= @outcome %></p>
+  <% else %>
+  <p><%= @outcome %></p>
+  <% end %>
 
   <p><%= @outcome %></p>
 </body>

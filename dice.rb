@@ -52,11 +52,11 @@ end
 
 get("/dice/1/20") do
   # Generate two random numbers between 1 and 6
-  one_die = rand(1..20)
+  @die = rand(1..20)
 # Result  
   result = one_die
     
-  @outcome = "You rolled a #{one_die}."
+  @outcome = "You rolled a #{@die}."
   erb(:one_twenty)
 end          
 
@@ -72,4 +72,15 @@ get("/dice/5/4") do
     
   @outcome = "You rolled a #{first_die}, #{second_die}, #{third_die}, #{fourth_die}, and a #{fifth_die} for a total of #{sum}"
   erb(:five_four)
-end          
+end      
+
+get("/dice/100/6") do
+  @rolls = []
+
+  100.times do
+    die = rand(1..6)
+    @rolls.push(die)
+  end
+
+  erb(:one_hundred_six)
+end
