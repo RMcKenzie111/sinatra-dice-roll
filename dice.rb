@@ -19,6 +19,8 @@ get("/giraffe") do
   "Hopefully this shows up without having to restart the server."
 end
 
+
+# In order to have " within our String, we had to escape them with a backslash. Then, Ruby knows not to terminate the String there, and instead treats the " as just another character to be included in the String.
 get("/") do
   "<h1>Dice Roll</h1>
    <ul>
